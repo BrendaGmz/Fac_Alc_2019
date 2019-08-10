@@ -139,7 +139,7 @@ Begin VB.Form Frm_Adm_Notas_Credito
             _ExtentY        =   529
             _Version        =   393216
             CustomFormat    =   "dd MMMM yyyy"
-            Format          =   108199939
+            Format          =   6619139
             CurrentDate     =   38712
          End
          Begin VB.Label Lbl_Forma_Pago 

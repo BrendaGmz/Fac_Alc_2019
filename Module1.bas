@@ -379,6 +379,7 @@ Public Sub Asignación_Datos_Cliente()
     Regimen_Emisor = "601 REGIMEN GENERAL DE LEY PERSONAS MORALES"
 End Sub
 
+
 '*******************************************************************************
 'NOMBRE DE LA FUNCIÓN: Aviso_Termino_Folios
 'DESCRIPCIÓN: Consulta si aun hay folios disponible
