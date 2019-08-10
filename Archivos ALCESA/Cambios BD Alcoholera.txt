@@ -1,0 +1,112 @@
+Agregar a Cat_Clientes
+	No_Ext varchar(20)
+	No_Int varchar(20)
+	Pais  varchar(30)
+	Metodo_Pago varchar(30)
+	Cuenta_Pago varchar(30)
+
+Agregar a Adm_Clientes_Facturas
+	No_Factura_Electronica  CHAR(10)
+	Serie varchar(10)
+	Forma_Factura char(1)
+	Timbre_Version varchar(20)
+	Timbre_UUID varchar(250)
+	Timbre_Fecha_Timbrado  datetime
+	Timbre_selloCFD  varchar(1000)
+	Timbre_noCertificadoSAT  varchar(50)
+	Timbre_selloSAT  varchar(1000)
+	Ruta_Codigo_BD varchar(100)
+	Metodo_Pago varchar(30)
+	Cuenta_Pago varchar(30)
+
+
+Agregar a Adm_Clientes_Facturas_Detalles
+	No_Factura_Electronica  CHAR(10)
+	Serie varchar(10)
+
+Crear Tabla Cat_Parametos_Factura_Electronica
+	USE [ALCOHOLERA]
+GO
+
+/****** Object:  Table [dbo].[Cat_Parametros_Factura_Electronica]    Script Date: 08/14/2012 19:20:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Cat_Parametros_Factura_Electronica](
+	[Parametro_ID] [int] IDENTITY(1,1) NOT NULL,
+	[Ruta_Certificado] [varchar](255) NULL,
+	[Ruta_Llave_Privada] [varchar](255) NULL,
+	[Password_Llave_Privada] [varchar](50) NULL,
+	[Vigencia_Certificado_Desde] [datetime] NULL,
+	[Vigencia_Certificado_Hasta] [datetime] NULL,
+	[Dias_Aviso_Expira_Vigencia] [int] NULL,
+	[Dias_Aviso_Termina_Folios] [int] NULL,
+	[Ruta_Pdfs] [varchar](255) NULL,
+	[Ruta_Xmls] [varchar](255) NULL,
+	[Ruta_NC] [varchar](255) NULL,
+	[Porcentaje_Interes_Pagare] [int] NULL,
+	[Mensaje_Factura] [varchar](250) NULL,
+	[Version_Timbrado] [varchar](50) NULL,
+	[Codigo_Usuario] [varchar](100) NULL,
+	[Codigo_Usuario_Proveedor] [varchar](100) NULL,
+	[ID_Sucursal_Timbrado] [varchar](50) NULL,
+	[Ambiente_Timbrado] [varchar](50) NULL,
+	[Usuario_creo] [varchar](50) NULL,
+	[Fecha_Creo] [datetime] NULL,
+	[Usuario_Modifico] [varchar](50) NULL,
+	[Fecha_Modifico] [datetime] NULL,
+ CONSTRAINT [PK_Cat_Parametros_Factura_Electronica] PRIMARY KEY CLUSTERED 
+(
+	[Parametro_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+Crear tabla Cat_Parametros_Factura_Electronica_Folios
+	USE [ALCOHOLERA]
+GO
+
+/****** Object:  Table [dbo].[Cat_Parametros_Factura_Electronica_Folios]    Script Date: 08/14/2012 19:18:29 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Cat_Parametros_Factura_Electronica_Folios](
+	[Parametro_Folio_ID] [int] IDENTITY(1,1) NOT NULL,
+	[Tipo] [varchar](20) NULL,
+	[Serie] [varchar](50) NULL,
+	[Folio_Inicial] [bigint] NULL,
+	[Folio_Final] [bigint] NULL,
+	[Estatus] [varchar](20) NULL,
+	[Usuario_Creo] [varchar](50) NULL,
+	[Fecha_Creo] [datetime] NULL,
+	[Usuario_Modifico] [varchar](50) NULL,
+	[Fecha_Modifico] [datetime] NULL,
+ CONSTRAINT [PK_Cat_Parametros_Factura_Electronica_Folios] PRIMARY KEY CLUSTERED 
+(
+	[Parametro_Folio_ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
